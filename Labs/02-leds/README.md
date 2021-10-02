@@ -1,5 +1,5 @@
 # Lab 2: Ondřej Soukeník
-Link to this [Assignment](https://github.com/ondrasouk/Digital-electronics-2/tree/main/Labs/01-tools)
+Link to this [Assignment](https://github.com/ondrasouk/Digital-electronics-2/tree/main/Labs/02-leds)
 ### Active-low and active-high LEDs
 
 1. Complete tables according to the AVR manual.
