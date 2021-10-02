@@ -61,15 +61,18 @@ int main(void)
     PORTB = PORTB & ~(1<<LED_GREEN);
 
     // Configure the second LED at port C
-    // WRITE YOUR CODE HERE
+    // Set pin as output in Data Direction Register...
+    DDRC = DDRC | (1<<LED_PC5);
+    // ...and turn LED on in Data Register
+    PORTC = PORTC | (1<<LED_PC5);
 
     // Infinite loop
     while (1)
     {
         // Pause several milliseconds
         _delay_ms(BLINK_DELAY);
-
-        // WRITE YOUR CODE HERE
+        PORTB = PORTB ^ (1<<LED_GREEN);
+        PORTC = PORTC ^ (1<<LED_PC5);
     }
 
     // Will never reach this
@@ -84,15 +87,23 @@ int main(void)
 
 ```c
     // Configure Push button at port D and enable internal pull-up resistor
-    // WRITE YOUR CODE HERE
+    // Set pin as input in Data Direction Register...
+    DDRD = DDRD & ~(1<<BT_PD7);
+    // ...and use pull-up in Data Register
+    PORTD = PORTD | (1<<BT_PD7);
 
     // Infinite loop
     while (1)
     {
         // Pause several milliseconds
         _delay_ms(BLINK_DELAY);
-
-        // WRITE YOUR CODE HERE
+        // test if button is pressed (connected to GND => 0), if not the 
+        // pullup resistor takes voltage at the input port to logic 1.
+        if(bit_is_clear(PIND, 7))
+        {
+            PORTB = PORTB ^ (1<<LED_GREEN);
+            PORTC = PORTC ^ (1<<LED_PC5);
+        }
     }
 ```
 
@@ -101,5 +112,5 @@ int main(void)
 
 1. Scheme of Knight Rider application, i.e. connection of AVR device, five LEDs, resistors, one push button, and supply voltage. The image can be drawn on a computer or by hand. Always name all components and their values!
 
-   ![your figure]()
+   ![](images/Knight-rider.png)
 
