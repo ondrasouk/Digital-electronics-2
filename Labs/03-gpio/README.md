@@ -21,21 +21,27 @@
 
 1. In your words, describe the difference between the declaration and the definition of the function in C.
    * Function declaration
+   Declaration of function tells the compiler what is the name of function and how to call it.
    * Function definition
+   Definition is the body of function.
 
 2. Part of the C code listing with syntax highlighting, which toggles LEDs only if push button is pressed. Otherwise, the value of the LEDs does not change. Use function from your GPIO library. Let the push button is connected to port D:
 
 ```c
     // Configure Push button at port D and enable internal pull-up resistor
-    // WRITE YOUR CODE HERE
-
+    GPIO_config_input_pullup(&DDRD, BT_PD7);
+    
     // Infinite loop
     while (1)
     {
         // Pause several milliseconds
         _delay_ms(BLINK_DELAY);
 
-        // WRITE YOUR CODE HERE
+        if(!(GPIO_read(&PIND, BT_PD7)))
+        {
+            GPIO_toggle(&PORTB, LED_GREEN);
+            GPIO_toggle(&PORTC, LED_PC5);
+        }
     }
 ```
 
