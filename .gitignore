@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Ignore additional files and directories
+*.cache/
+compile_commands.json
+
+# Kate files
+*.kate-swp
