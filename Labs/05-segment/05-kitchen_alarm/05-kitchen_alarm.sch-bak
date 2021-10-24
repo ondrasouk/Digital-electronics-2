@@ -1,0 +1,215 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATmega:ATmega328P-AU U?
+U 1 1 61746449
+P 5550 2400
+F 0 "U?" H 5550 811 50  0000 C CNN
+F 1 "ATmega328P-AU" H 5550 918 50  0000 L CNN
+F 2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" H 5550 2400 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 5550 2400 50  0001 C CNN
+	1    5550 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 6174697A
+P 5550 900
+F 0 "#PWR?" H 5550 750 50  0001 C CNN
+F 1 "VCC" H 5565 1073 50  0000 C CNN
+F 2 "" H 5550 900 50  0001 C CNN
+F 3 "" H 5550 900 50  0001 C CNN
+	1    5550 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 61746B3B
+P 5650 900
+F 0 "#PWR?" H 5650 750 50  0001 C CNN
+F 1 "VCC" H 5665 1073 50  0000 C CNN
+F 2 "" H 5650 900 50  0001 C CNN
+F 3 "" H 5650 900 50  0001 C CNN
+	1    5650 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61746FA6
+P 5550 3900
+F 0 "#PWR?" H 5550 3650 50  0001 C CNN
+F 1 "GND" H 5555 3727 50  0000 C CNN
+F 2 "" H 5550 3900 50  0001 C CNN
+F 3 "" H 5550 3900 50  0001 C CNN
+	1    5550 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 1200 6650 1200
+Wire Wire Line
+	6650 3300 6150 3300
+Wire Wire Line
+	6650 3600 6150 3600
+Text Label 6650 3600 0    50   ~ 0
+SRCLK(SEG_CLK)
+Text Label 6650 3300 0    50   ~ 0
+RCLK(SEG_LATCH)
+Text Label 6650 1200 0    50   ~ 0
+SER(SEG_DATA)
+Wire Wire Line
+	6150 2400 6350 2400
+Wire Wire Line
+	6350 1850 6350 2200
+Wire Wire Line
+	6350 2200 6150 2200
+Wire Wire Line
+	6350 2400 6350 2700
+$Comp
+L Device:R R?
+U 1 1 617571B1
+P 6450 2100
+F 0 "R?" H 6520 2146 50  0000 L CNN
+F 1 "10k" H 6520 2055 50  0000 L CNN
+F 2 "" V 6380 2100 50  0001 C CNN
+F 3 "~" H 6450 2100 50  0001 C CNN
+	1    6450 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61757E9A
+P 6250 1650
+F 0 "R?" H 6320 1696 50  0000 L CNN
+F 1 "10k" H 6320 1605 50  0000 L CNN
+F 2 "" V 6180 1650 50  0001 C CNN
+F 3 "~" H 6250 1650 50  0001 C CNN
+	1    6250 1650
+	1    0    0    -1  
+$EndComp
+Connection ~ 7400 2300
+Wire Wire Line
+	7400 1850 7400 2300
+Wire Wire Line
+	7250 1850 7400 1850
+Connection ~ 7400 2700
+Wire Wire Line
+	7400 2300 7400 2700
+Wire Wire Line
+	7250 2300 7400 2300
+Wire Wire Line
+	7400 2700 7400 2800
+Wire Wire Line
+	7250 2700 7400 2700
+$Comp
+L power:GND #PWR?
+U 1 1 6175680C
+P 7400 2800
+F 0 "#PWR?" H 7400 2550 50  0001 C CNN
+F 1 "GND" H 7405 2627 50  0000 C CNN
+F 2 "" H 7400 2800 50  0001 C CNN
+F 3 "" H 7400 2800 50  0001 C CNN
+	1    7400 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW?
+U 1 1 61754C12
+P 7050 2700
+F 0 "SW?" H 7050 2985 50  0000 C CNN
+F 1 "S3-A3" H 7050 2894 50  0000 C CNN
+F 2 "" H 7050 2900 50  0001 C CNN
+F 3 "~" H 7050 2900 50  0001 C CNN
+	1    7050 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW?
+U 1 1 61754923
+P 7050 2300
+F 0 "SW?" H 7050 2585 50  0000 C CNN
+F 1 "S2-A2" H 7050 2494 50  0000 C CNN
+F 2 "" H 7050 2500 50  0001 C CNN
+F 3 "~" H 7050 2500 50  0001 C CNN
+	1    7050 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW?
+U 1 1 6175387D
+P 7050 1850
+F 0 "SW?" H 7050 2135 50  0000 C CNN
+F 1 "S1-A1" H 7050 2044 50  0000 C CNN
+F 2 "" H 7050 2050 50  0001 C CNN
+F 3 "~" H 7050 2050 50  0001 C CNN
+	1    7050 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6175B256
+P 6700 2500
+F 0 "R?" H 6770 2546 50  0000 L CNN
+F 1 "10k" H 6770 2455 50  0000 L CNN
+F 2 "" V 6630 2500 50  0001 C CNN
+F 3 "~" H 6700 2500 50  0001 C CNN
+	1    6700 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 2300 6450 2300
+Wire Wire Line
+	6350 1850 6850 1850
+Wire Wire Line
+	6450 2300 6450 2250
+Connection ~ 6450 2300
+Wire Wire Line
+	6450 2300 6850 2300
+Wire Wire Line
+	6350 2700 6700 2700
+Wire Wire Line
+	6700 2700 6700 2650
+Connection ~ 6700 2700
+Wire Wire Line
+	6700 2700 6850 2700
+Wire Wire Line
+	6250 1800 6250 1850
+Wire Wire Line
+	6250 1850 6350 1850
+Connection ~ 6350 1850
+Wire Wire Line
+	6450 1950 6450 1500
+Wire Wire Line
+	6450 1500 6250 1500
+Wire Wire Line
+	6700 2350 6700 1500
+Wire Wire Line
+	6700 1500 6450 1500
+Connection ~ 6450 1500
+$Comp
+L power:+5V #PWR?
+U 1 1 6175CD07
+P 6700 1400
+F 0 "#PWR?" H 6700 1250 50  0001 C CNN
+F 1 "+5V" H 6715 1573 50  0000 C CNN
+F 2 "" H 6700 1400 50  0001 C CNN
+F 3 "" H 6700 1400 50  0001 C CNN
+	1    6700 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 1400 6700 1500
+Connection ~ 6700 1500
+$EndSCHEMATC
